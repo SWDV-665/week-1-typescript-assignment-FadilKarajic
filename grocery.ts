@@ -1,18 +1,21 @@
-class Grocery{   
-
-    dairy:string;
-    quantities:number;
-    constructor(dairyFoods:string,dairyQuantities:number){
-        this.dairy=dairyFoods + dairyQuantities;
+class Grocery {
+    groceries: string[];
+    constructor(public dairyFood: string[]) {
+        this.groceries=dairyFood;
+        
+        
     }
-
-
-}
-function getFood(dairyFoods,dairyQuantities){
-    return dairyFoods+dairyQuantities;
 }
 
-let dairyProducts=["milk","cheese","yogurt","butter"]
-let dairyProductQuantites=[1,2,3,4]
-document.body.innerHTML=getFood(dairyProducts,dairyProductQuantites);
+interface Food {
+    dairyFood: string[];  
+}
+
+function getFood(food : Food) {
+    return food.dairyFood;
+}
+
+let dairyProducts=["milk","cheese","yogurt","butter"];
+let products = new Grocery(dairyProducts);
+document.body.innerHTML = getFood(products);
 

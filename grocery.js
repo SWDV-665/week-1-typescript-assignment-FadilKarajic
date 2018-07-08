@@ -1,12 +1,13 @@
 var Grocery = /** @class */ (function () {
-    function Grocery(dairyFoods, dairyQuantities) {
-        this.dairy = dairyFoods + dairyQuantities;
+    function Grocery(dairyFood) {
+        this.dairyFood = dairyFood;
+        this.groceries = dairyFood;
     }
     return Grocery;
 }());
-function getFood(dairyFoods, dairyQuantities) {
-    return dairyFoods + dairyQuantities;
+function getFood(food) {
+    return food.dairyFood;
 }
 var dairyProducts = ["milk", "cheese", "yogurt", "butter"];
-var dairyProductQuantites = [1, 2, 3, 4];
-document.body.innerHTML = getFood(dairyProducts, dairyProductQuantites);
+var products = new Grocery(dairyProducts);
+document.body.innerHTML = getFood(products);
